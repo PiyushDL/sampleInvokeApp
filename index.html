@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Button with Content</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .content {
+            margin-top: 60px;
+            /* Adjust based on the button height */
+            padding: 20px;
+            border: 1px solid #ddd;
+            /* Optional: Border for visual clarity */
+        }
+
+        .sticky-container {
+            position: relative;
+        }
+
+        .sticky-button {
+            position: fixed;
+            top: 2%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            /* Ensure the button is above other content */
+        }
+
+        /* Optional: Hover effect */
+        .sticky-button:hover {
+            background-color: #0056b3;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #007BFF;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #007BFF;
+        }
+
+        p {
+            margin: 20px 0;
+        }
+
+        .portfolio-item {
+            margin: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .portfolio-item img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="sticky-button">
+        <a href="http://localhost:3000/rfelogs/create-rfelog?invokeAppId=4612376" target="_blank">
+            Sticky Button
+        </a>
+    </div> -->
+
+    <div class="sticky-container">
+        <button class="sticky-button">
+            <a href="http://localhost:3000/rfelogs/create-rfelog?invokeAppId=4612376" target="_blank">
+                Create RfE Log
+            </a>
+        </button>
+    </div>
+
+    <div class="container">
+        <div>
+            <!-- Your content goes here -->
+            <header>
+                <h1>Your Name</h1>
+            </header>
+
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <section id="home">
+                <h2>Welcome to My Portfolio</h2>
+                <p>Showcasing my work and passion for creating amazing things.</p>
+            </section>
+
+            <section id="about">
+                <h2>About Me</h2>
+                <p>I am a passionate web developer with a focus on creating user-friendly and visually appealing
+                    websites.</p>
+            </section>
+
+            <section id="portfolio">
+                <h2>Portfolio</h2>
+
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/400x300" alt="Project 1">
+                    <p>Project 1 - Description goes here.</p>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/400x300" alt="Project 2">
+                    <p>Project 2 - Description goes here.</p>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/400x300" alt="Project 3">
+                    <p>Project 3 - Description goes here.</p>
+                </div>
+            </section>
+
+            <section id="contact">
+                <h2>Contact Me</h2>
+                <p>Feel free to reach out for collaboration, questions, or just to say hello!</p>
+            </section>
+
+            <footer>
+                <p>&copy; 2023 Your Name. All rights reserved.</p>
+            </footer>
+            <!-- Add more content here -->
+        </div>
+    </div>
+</body>
+
+</html>
