@@ -4,50 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sticky Button with Content</title>
+    <title>Simple Invoke App</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        .container {
-            padding: 20px;
-        }
-
-        .content {
-            margin-top: 60px;
-            /* Adjust based on the button height */
-            padding: 20px;
-            border: 1px solid #ddd;
-            /* Optional: Border for visual clarity */
+            box-sizing: border-box;
+            background-color: #f8f8f8;
         }
 
         .sticky-container {
-            position: relative;
-        }
-
-        .sticky-button {
             position: fixed;
-            top: 2%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #007BFF;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-            z-index: 1;
+            top: 20px;
+            right: 20px;
+            z-index: 2;
             /* Ensure the button is above other content */
         }
 
-        /* Optional: Hover effect */
+        .sticky-button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 4px 0px 5px rgb(255 255 255 / 20%);
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
         .sticky-button:hover {
             background-color: #0056b3;
+            /* transform: rotate(360deg) scale(1.1); */
+            border-radius: 0%;
+            box-shadow: 4px 0px 5px rgb(255 255 255 / 20%);
+            /* box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); */
+        }
+
+        .sticky-button:hover span {
+            display: none;
+            /* Hide the original text */
+        }
+
+        .sticky-button:hover::after {
+            content: "Create RfE Log"; /* Show the new text on hover */
+        }
+
+        section {
+            padding: 80px 20px;
+            /* Add some padding to simulate content below the button */
+            text-align: center;
         }
 
         a {
@@ -111,22 +118,17 @@
 </head>
 
 <body>
-    <!-- <div class="sticky-button">
-        <a href="http://localhost:3000/rfelogs/create-rfelog?invokeAppId=4612376" target="_blank">
-            Sticky Button
-        </a>
-    </div> -->
-    <a href="http://localhost:3000/rfelogs/create-rfelog?invokeAppId=4612376" target="_blank">
-        <div class="sticky-container">
-            <button class="sticky-button">
-                Create RfE Log       
-            </button>
-        </div>
-    </a>
-    
-    <div class="container">
+
+    <div class="sticky-container">
+        <button class="sticky-button">
+            <span>
+                +
+            </span>
+        </button>
+    </div>
+
+    <div>
         <div>
-            <!-- Your content goes here -->
             <header>
                 <h1>Your Name</h1>
             </header>
@@ -176,9 +178,9 @@
             <footer>
                 <p>&copy; 2023 Your Name. All rights reserved.</p>
             </footer>
-            <!-- Add more content here -->
         </div>
     </div>
+
 </body>
 
 </html>
